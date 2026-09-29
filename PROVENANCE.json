@@ -1,0 +1,34 @@
+{
+  "package": "obix-compiler-diagnostics",
+  "dir": "compiler/obix-compiler-diagnostics",
+  "importedBy": "authored in the recovery (no importer entry: there is no upstream package of this name)",
+  "stage": "vuets-phase-4 authored",
+  "sources": [
+    {
+      "label": "authored-in-recovery",
+      "note": "the diagnostic contract types and positionAt MOVED here from @obinexusltd/obix-compiler-parser (Phase 1 - 3) and from @obinexusltd/obix-compiler-sfc (SourcePosition, SourceRange) without a change of meaning — the diagnostics of every stage are byte-identical to the golden taken before the move (tests/vuets/golden/diagnostics.json); the validators (checkDiagnostic, checkStageResult), the constant tables, the tests and the README are new. No Vue code was copied and the package imports nothing but its own modules."
+    }
+  ],
+  "transforms": [],
+  "notes": [
+    "The contract is frontend-neutral: a diagnostic says where, what and how bad, in OBIX words; what an upstream compiler said is metadata (D-50). It is the vocabulary every stage and every later frontend (Vue, React) reports in.",
+    "The corpus behind the golden is tests/corpus/vuets (pairs of byte-identical .vue / .obix fixtures)."
+  ],
+  "localFixes": [],
+  "renamedFrom": [
+    {
+      "name": "@obinexusltd/obix-compiler-diagnostics",
+      "dir": "compiler/obix-compiler-diagnostics",
+      "stage": "unscoped-naming",
+      "why": "D-102 (2026-09-29): OBIX packages are named without an npm scope — previous name @obinexusltd/obix-compiler-diagnostics, current name obix-compiler-diagnostics (docs/recovery/unscoped-migration.md); the directory, version and exports are unchanged"
+    }
+  ],
+  "export": {
+    "from": "https://github.com/obinexusmk2/obix-monorepo",
+    "branch": "recovery/obix-api-preserving-rebuild",
+    "commit": "69cafc94910c1add865a520877617ac307668875",
+    "directory": "compiler/obix-compiler-diagnostics",
+    "exportedBy": "scripts/release/export-repos.mjs",
+    "note": "a clean initial commit of this package; the monorepo history is not imported (D-103). Local machine paths in this record are replaced by <local workspace>."
+  }
+}
